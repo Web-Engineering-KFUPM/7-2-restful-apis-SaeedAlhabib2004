@@ -8,6 +8,7 @@
 import mongoose from "mongoose";
 
 export async function connectDB(url) {
-  await mongoose.connect(url);
+  await mongoose.connect(process.env.MONGO_URL);
   console.log("[DB] Mongo connected");
 }
+export default connectDB;
